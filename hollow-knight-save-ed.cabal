@@ -1,0 +1,70 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: f30776e3e44247e013ad8002c1fc1a38823a1b4e0e1d834f1f171a20ab0df21d
+
+name:           hollow-knight-save-ed
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/GintMist/hollow-knight-save-ed#readme>
+homepage:       https://github.com/GintMist/hollow-knight-save-ed#readme
+bug-reports:    https://github.com/GintMist/hollow-knight-save-ed/issues
+author:         Gint Mist
+maintainer:     themistghillein@gmail.com
+copyright:      2018 Gint Mist
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/GintMist/hollow-knight-save-ed
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , cipher-aes >= 0.2 && < 0.3
+    , pkcs7 >= 1.0.0.1
+    , base64-bytestring >= 1 && < 2
+    , bytestring >= 0.10 && < 1
+    , split >= 0.2 && < 0.3
+  exposed-modules:
+      HollowKnightSaveED
+  other-modules:
+      Paths_hollow_knight_save_ed
+  default-language: Haskell2010
+
+executable hollow-knight-save-ed-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring >= 0.10 && < 1
+    , hollow-knight-save-ed
+  other-modules:
+      Paths_hollow_knight_save_ed
+  default-language: Haskell2010
+
+test-suite hollow-knight-save-ed-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hollow-knight-save-ed
+    , QuickCheck >= 2
+    , bytestring >= 0.10 && < 1
+  other-modules:
+      Paths_hollow_knight_save_ed
+  default-language: Haskell2010
